@@ -6,7 +6,9 @@ import java.util.Scanner;
 import java.io.File;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
+import java.lang.Math;
 
+import static java.lang.Math.random;
 
 
 public class Main {
@@ -37,7 +39,7 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println(lines);
-        System.out.println(lines.get(3));
+        System.out.println(lines.get((int) (random() * lines.size())));
     }
 
 }
