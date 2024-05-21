@@ -39,7 +39,7 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println(lines);
-        System.out.println(lines.get((int) (random() * lines.size())));
+        System.out.println(lines.get((int) (Math.random() * lines.size())));
     }
 
 }
