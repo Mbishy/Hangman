@@ -12,8 +12,12 @@ import static java.lang.Math.random;
 
 
 public class Main {
+
+    public static String randomWorld;
     public static void main(String[] args) {
+
         selectionWord();
+        hidingWorld();
     }
 
     public static void beginGame(){
@@ -39,7 +43,11 @@ public class Main {
             e.printStackTrace();
         }
         System.out.println(lines);
-        System.out.println(lines.get((int) (Math.random() * lines.size())));
+        randomWorld = (lines.get((int) (Math.random() * lines.size())));
+    }
+
+    public static void hidingWorld(){
+        System.out.println(randomWorld);
     }
 
 }
