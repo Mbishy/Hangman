@@ -14,8 +14,9 @@ import static java.lang.Math.random;
 public class Main {
 
     public static String randomWorld;
+    int errorPionts;
     public static void main(String[] args) {
-
+        drawGallows(0);
         selectionWord();
         hidingWorld();
     }
@@ -24,8 +25,68 @@ public class Main {
 
     }
 
-    public static void drawGallows(){
+    public static void drawGallows(int errorPoints){
+        switch (errorPoints) {
+            case 0: System.out.println("\n------" +
+                    "\n| " +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n~~~~~~~~\n");
+                break;
 
+            case 1: System.out.println("\n------" +
+                    "\n|   | " +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n~~~~~~~~\n");
+            break;
+
+            case 2: System.out.println("\n------" +
+                    "\n|   | " +
+                    "\n|   0" +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n~~~~~~~~\n");
+                break;
+
+            case 3: System.out.println("\n------" +
+                    "\n|   | " +
+                    "\n|   0" +
+                    "\n|  /|\\ " +
+                    "\n|" +
+                    "\n|" +
+                    "\n|" +
+                    "\n~~~~~~~~\n");
+                break;
+
+            case 4: System.out.println("\n------" +
+                    "\n|   | " +
+                    "\n|   0" +
+                    "\n|  /|\\ " +
+                    "\n|   |" +
+                    "\n|" +
+                    "\n|" +
+                    "\n~~~~~~~~\n");
+                break;
+
+            case 5: System.out.println("\n------" +
+                    "\n|   | " +
+                    "\n|   0" +
+                    "\n|  /|\\ " +
+                    "\n|   |" +
+                    "\n|  / \\ " +
+                    "\n|" +
+                    "\n~~~~~~~~\n");
+                break;
+        }
     }
 
     public static void turnUser(){
@@ -42,7 +103,6 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println(lines);
         randomWorld = (lines.get((int) (Math.random() * lines.size())));
     }
 
