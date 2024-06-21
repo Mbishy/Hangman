@@ -18,22 +18,21 @@ public class Main {
 
     public static void main(String[] args) {
         beginGame();
-        drawGallows(0);
         selectionWord();
-        hidingWorld();
+        hidingWorld(randomWorld);
     }
 
     public static void beginGame() {
         System.out.println("Добро пожаловать!");
-        System.out.println("Для начала игры нажмите(Н), для выхода из игры(В)");
+        System.out.println("Для начала игры нажмите(y), для выхода из игры(e)");
         Scanner scanner = new Scanner(System.in);
         String button = scanner.nextLine();
         switch (button) {
-            case "Н":
+            case "y":
                 System.out.println("Начинаем новую игру");
+                startGame();
                 break;
-
-            case "В":
+            case "e":
                 System.out.println("Выходим из игры");
                 break;
 
@@ -114,7 +113,13 @@ public class Main {
     }
 
     public static void turnUser() {
+        Scanner userInput = new Scanner(System.in);
+        System.out.println("Введите букву:");
+        String simbol = userInput.nextLine();
+    }
 
+    public static void startGame(){
+        turnUser();
     }
 
     public static void selectionWord() {
@@ -128,10 +133,16 @@ public class Main {
             e.printStackTrace();
         }
         randomWorld = (lines.get((int) (Math.random() * lines.size())));
+
     }
 
-    public static void hidingWorld() {
-        System.out.println(randomWorld);
+    public static void hidingWorld(String randomWorld) {
+        //System.out.println(randomWorld);
+        StringBuilder mask = new StringBuilder();
+        for (int i = 0; i < randomWorld.length(); i++){
+            mask.append('*');
+        }
+        System.out.println(mask);
     }
 
 }
